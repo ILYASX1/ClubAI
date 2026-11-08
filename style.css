@@ -1,0 +1,471 @@
+
+/* 
+   GENERAL SETTINGS
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F5F4FF;
+    color: #17172F;
+    line-height: 1.6;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 
+   HEADER
+ */
+
+header {
+    background-color: #11112D;
+    color: white;
+    min-height: 75px;
+    padding: 5px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo container */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo p {
+    color: #C99AFF;
+    font-size: 12px;
+}
+
+
+/* 
+    NAVIGATION
+ */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #A164E6;
+}
+
+nav a.active {
+    background-color: #7028C5;
+    color: white;
+}
+
+
+/* 
+    MAIN CONTENT
+ */
+
+main {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 35px 15px;
+
+    flex: 1;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+section > p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* 
+   HOMEPAGE
+ */
+
+main > section:first-child:has(img) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+main > section:first-child:has(img) h2 {
+    text-align: left;
+    font-size: 38px;
+    grid-column: 1;
+}
+
+main > section:first-child:has(img) p {
+    text-align: left;
+    grid-column: 1;
+}
+
+main > section:first-child:has(img) img {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    width: 100%;
+    border-radius: 15px;
+}
+
+main > section:first-child:has(img) a {
+    grid-column: 1;
+    justify-self: start;
+    background-color: #7028C5;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+main > section:first-child:has(img) a:hover {
+    background-color: #50169A;
+}
+
+
+/* Homepage benefits */
+
+main > section:nth-child(2):has(article) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+main > section:nth-child(2):has(article) h2 {
+    grid-column: 1 / -1;
+}
+
+
+/* 
+ WORKSHOPS
+ */
+
+main > section:has(article) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+main > section:has(article) h2 {
+    grid-column: 1 / -1;
+}
+
+main > section:has(article) article {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #E3D9F7;
+    box-shadow: 0 3px 12px rgba(50, 20, 90, 0.08);
+    transition: 0.3s;
+}
+
+main > section:has(article) article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 18px rgba(50, 20, 90, 0.15);
+}
+
+article h3 {
+    color: #7028C5;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+
+/* 
+  PROGRAMME TABLE
+ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+thead {
+    background-color: #7028C5;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #DDD5EF;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #EEEAFB;
+}
+
+tbody tr:hover {
+    background-color: #E4D8FA;
+}
+
+
+/* 
+   CONTACT FORM
+ */
+
+form {
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+fieldset {
+    border: 1px solid #D9C9F0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: white;
+}
+
+legend {
+    color: #7028C5;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 10px 5px 5px 0;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCC5DE;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7028C5;
+    box-shadow: 0 0 5px rgba(112, 40, 197, 0.2);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #7028C5;
+    margin: 10px 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* Form buttons */
+
+button {
+    background-color: #7028C5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #50169A;
+}
+
+button[type="reset"] {
+    background-color: white;
+    color: #7028C5;
+    border: 1px solid #7028C5;
+}
+
+
+main a {
+    display: inline-block;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #11112D;
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: auto;
+    line-height: 2;
+}
+
+footer p {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+
+/*  RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .logo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    /* Main */
+
+    main {
+        padding: 25px 15px;
+    }
+
+    /* Homepage */
+
+    main > section:first-child:has(img) {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:first-child:has(img) h2,
+    main > section:first-child:has(img) p,
+    main > section:first-child:has(img) img,
+    main > section:first-child:has(img) a {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    main > section:first-child:has(img) h2 {
+        font-size: 28px;
+    }
+
+    /* Benefits and workshops */
+
+    main > section:nth-child(2):has(article),
+    main > section:has(article) {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    /* Table */
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px 5px;
+    }
+
+    /* Form */
+
+    fieldset {
+        padding: 15px;
+    }
+}
+
+
+/* 
+   SMALL SCREENS
+ */
+
+@media (max-width: 480px) {
+
+    nav a {
+        font-size: 12px;
+        padding: 7px 9px;
+    }
+
+    main > section:first-child:has(img) {
+        padding: 20px;
+    }
+
+    main > section:first-child:has(img) h2 {
+        font-size: 25px;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th, td {
+        padding: 7px 3px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
